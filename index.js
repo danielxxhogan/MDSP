@@ -3,12 +3,17 @@ const cors = require('cors');
 const NewsAPI = require('newsapi');
 const fetch = require('node-fetch');
 const language = require('@google-cloud/language');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
+app.use(express.static('client/build'));
+
 
 const newsapi = new NewsAPI(process.env.NEWS_API_KEY);
 const nlpapi = new language.LanguageServiceClient();
+
+const PORT = process.env.PORT || 3002;
 
 app.get('/news/:ticker', async (req, res) => {
 
@@ -139,6 +144,6 @@ app.get('/news/:ticker', async (req, res) => {
 })
 
 
-app.listen(process.env.PORT, () => {
-  console.log('Server started on port', process.env.PORT);
+app.listen(PORT, () => {
+  console.log('Server started on port', PORT);
 });

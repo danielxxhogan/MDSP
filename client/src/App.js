@@ -10,7 +10,6 @@ function App() {
   // data received from the api, if the response has a status 400, error is set to true
   // which is used to conditionally render an error message on the screen.
 
-  const [BASE_URL, _] = useState('http://localhost:3002');
   const [ticker, setTicker] = useState('GME');
   const [posNeg, setPosNeg] = useState(' ');
   const [longShort, setLongShort] = useState(' ');
@@ -77,7 +76,7 @@ function App() {
     try {
       setError(false);
 
-      const response = await fetch(BASE_URL + `/news/${ticker}`)
+      const response = await fetch(`/news/${ticker}`)
 
       if (response.status === 400) {
         setError(true);
@@ -87,11 +86,9 @@ function App() {
         setPayload(parseRes);
 
         if (parseFloat(parseRes.sentiment) > 0) {
-          console.log('positive sentiment:', parseRes.sentiment);
           setPosNeg('Positive');
           setLongShort('Long');
         } else {
-          console.log('negative sentiment:', parseRes.sentiment);
           setPosNeg('Negative');
           setLongShort('Short');
         }
