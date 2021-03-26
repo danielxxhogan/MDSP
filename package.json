@@ -1,0 +1,28 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "express server for MDSP react app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Hogan",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/language": "^4.2.2",
+    "cors": "^2.8.5",
+    "dot-env": "^0.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "newsapi": "^2.4.1",
+    "node-fetch": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rando-mane/MDSP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rando-mane/MDSP/issues"
+  },
+  "homepage": "https://github.com/rando-mane/MDSP#readme"
+}
