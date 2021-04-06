@@ -13,7 +13,7 @@ app.use(express.static('client/build'));
 const newsapi = new NewsAPI(process.env.NEWS_API_KEY);
 const nlpapi = new language.LanguageServiceClient();
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3003;
 
 app.get('/news/:ticker', async (req, res) => {
 
