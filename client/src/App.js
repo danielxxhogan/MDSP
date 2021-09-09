@@ -120,7 +120,7 @@ function App() {
     {/* form for the user to enter a ticker */}
 
     <form onSubmit={onSubmit}>
-    <input value={ticker} onChange={onChange} ></input>
+      <input value={ticker} onChange={onChange} ></input>
       <button type='submit'>Submit</button>
     </form>
 
